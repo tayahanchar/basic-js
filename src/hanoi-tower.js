@@ -15,23 +15,14 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function calculateHanoi(disksNumber, turnsSpeed) {
+  let count = (2 ** disksNumber) -1;
 
-  let count = 0;
-function resolver_tower_of_hanoi(s, d, e, disksNumber) {
-  if (disksNumber <= 0) {
-      return
-  }
-  resolver_tower_of_hanoi(s, e, d, disksNumber - 1)
-  count++;
-  resolver_tower_of_hanoi(e, d, s, disksNumber - 1);
-  let sp = turnsSpeed / 60 / 60;
-  let speed = Math.floor(count / sp);
+  let speedInSecond = turnsSpeed / 60 / 60;
+  let speed = Math.floor(count / speedInSecond);
+
   return {
     turns: count, seconds: speed
   }
-  }
-
-  return resolver_tower_of_hanoi('s', 'd', 'e', disksNumber);
 }
 
 module.exports = {
