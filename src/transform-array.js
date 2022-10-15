@@ -55,8 +55,6 @@ function transform(arr) {
     }
   })
   return array;
-
-
 }
 
 module.exports = {
